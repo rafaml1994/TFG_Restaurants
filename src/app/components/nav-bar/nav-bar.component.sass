@@ -1,0 +1,240 @@
+@import '../../../styles'
+
+// .navBar
+//     background-color: #242424
+//     display: flex
+//     flex-direction: row
+//     justify-content: space-around
+//     align-items: center
+//     height: 60px
+//     box-shadow: 0px 0px 10px black
+
+// img
+//     width: 100px
+//     height: 100px
+// ul
+//     display: flex
+//     flex-direction: row
+//     justify-content: center
+//     gap: 2rem
+//     align-items: center
+//     list-style: none
+//     height: 80%
+//     width: 40%
+
+//     li
+//         height: 100% 
+//         display: flex
+//         align-items: center
+//         border-bottom: 2px solid transparent
+//         &:hover
+//             border-bottom: 2px solid $white
+//         a
+//             text-decoration: none
+//             color: $white
+//             font-size: large
+// .registro-container
+//     display: flex
+//     flex-direction: row
+//     justify-content: center
+//     align-items: center
+//     gap: 2rem
+
+//     a
+//         text-decoration: none
+//         color: white
+//         font-size: large
+//         &:nth-child(2)
+//             background-color: $primary
+//             color: black
+//             padding: .3rem
+//             padding-inline: 2rem
+//             border-radius: 3px
+//             text-transform: uppercase
+//             border: 2px solid transparent
+//         &:nth-child(2):hover
+//             background-color: $grey
+//             border: 2px solid $primary
+//             color: $primary
+
+    //Borrar desde aquí
+i
+    margin-right: 10px
+
+/*----------bootstrap-navbar-css------------*/
+.navbar
+    display: flex
+    flex-direction: row
+    justify-content: space-around
+    align-items: center
+  
+.navbar-logo
+    color: #fff
+.navbar-mainbg
+    background-color: $grey
+    padding: 0px
+   
+#navbarSupportedContent
+    overflow: hidden
+    position: relative
+    
+    & ul
+        padding: 0px
+        margin: 0px
+
+    & ul li a i
+        margin-right: 10px
+
+    & li
+        list-style-type: none
+        float: left
+
+    & ul li a
+        color: rgba(255, 196, 0, 0.5)
+        text-decoration: none
+        font-size: 15px
+        display: block
+        padding: 39px 39px
+        transition-duration: 0.6s
+        transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55)
+        position: relative
+
+    &>ul>li.active>a
+        color: $primary
+        background-color: transparent
+        transition: all 0.7s
+
+    & a:not(:only-child):after
+        content: "\f105"
+        position: absolute
+        right: 20px
+        top: 10px
+        font-size: 14px
+        font-family: "Font Awesome 5 Free"
+        display: inline-block
+        padding-right: 3px
+        vertical-align: middle
+        font-weight: 900
+        transition: 0.5s
+
+    & .active>a:not(:only-child):after
+        transform: rotate(90deg)
+
+.hori-selector
+    display: inline-block
+    position: absolute
+    height: 100%
+    top: 0px
+    left: 0px
+    transition-duration: 0.6s
+    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55)
+    background-color: #fff
+    border-top-left-radius: 15px
+    border-top-right-radius: 15px
+    margin-top: 10px
+ 
+    .right,
+    .left
+        position: absolute
+        width: 25px
+        height: 25px
+        background-color: #fff
+        bottom: 10px
+
+    .right
+        right: -25px
+
+    .left
+        left: -25px
+
+    .right::before,
+    .left::before
+        content: ''
+        position: absolute
+        width: 50px
+        height: 50px
+        border-radius: 50%
+        background-color: $grey
+
+    .right::before
+        bottom: 0
+        right: -25px
+
+    .left::before
+        bottom: 0
+        left: -25px
+.register-container
+    height: 100%
+    width: 400px
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    gap: 2rem
+    a
+        text-decoration: none
+        color: white
+        &:nth-child(2)
+            background-color: $primary
+            color: black
+            padding: .3rem
+            padding-inline: 2rem
+            border-radius: 3px
+            text-transform: uppercase
+            border: 2px solid transparent
+        &:nth-child(2):hover
+            background-color: $grey
+            border: 2px solid $primary
+            color: $primary
+        &:nth-child(1)
+            border-bottom: 2px solid transparent
+        &:nth-child(1):hover
+            border-bottom: 2px solid $white
+@media(min-width: 992px)
+    .navbar-expand-custom
+        -ms-flex-flow: row nowrap
+        flex-flow: row nowrap
+        -ms-flex-pack: start
+        justify-content: flex-start
+
+        .navbar-nav
+            -ms-flex-direction: row
+            flex-direction: row
+
+        .navbar-toggler
+            display: none
+
+        .navbar-collapse
+            display: -ms-flexbox!important
+            display: flex!important
+            -ms-flex-preferred-size: auto
+            flex-basis: auto
+
+@media (max-width: 991px)
+    #navbarSupportedContent ul li a
+        padding: 12px 30px
+    .hori-selector
+        margin-top: 0px
+        margin-left: 10px
+        border-radius: 0
+        border-top-left-radius: 25px
+        border-bottom-left-radius: 25px
+
+        .left,
+        .right
+            right: 10px
+
+        .left
+            top: -25px
+            left: auto
+
+        .right
+            bottom: -25px
+
+        .left::before
+            left: -25px
+            top: -25px
+
+        &::before
+            bottom: -25px
+            left: -25px
