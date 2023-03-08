@@ -9,6 +9,7 @@ import { CardsComponent } from './components/home/cards/cards.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card'
 import {MatButtonModule} from '@angular/material/button'
+import {CarouselModule} from 'primeng/carousel';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import {MatButtonModule} from '@angular/material/button'
     AppRoutingModule,
     BrowserAnimationsModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    CarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]
