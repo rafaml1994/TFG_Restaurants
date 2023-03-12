@@ -3,7 +3,7 @@
 
 body
     font-family: 'Roboto', sans-serif
-    
+
 $primary: #EBB914
 $white: #ffffff
 $grey: #242424
@@ -11,3 +11,46 @@ $grey: #242424
 *
     margin: 0
     padding: 0
+.p-carousel-next, .p-carousel-prev
+    width: 50px
+    height: 50px
+    color: $white
+    border: none
+.p-carousel .p-carousel-indicators .p-carousel-indicator.p-highlight button
+    background: $primary
+
+    &:focus
+        box-shadow: 0 0 5px $primary,0 0 25px $primary,0 0 50px $primary,0 0 100px $primary
+
+.p-carousel .p-carousel-content .p-carousel-prev, .p-carousel .p-carousel-content .p-carousel-next
+    color: #ffffff8a
+    &:enabled:hover
+        color: $white
+        background-color: #00000000
+    &:focus
+        box-shadow: none
+.input-container
+    background-color: #242424
+    border-radius: 5px
+    padding: 1rem
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px
+    h3
+        color: $white
+    .p-inputtext
+        border: 3px solid transparent
+        border-top-left-radius: none
+        width: 100%
+        &:hover
+            border: 3px solid transparent
+        &:enabled:focus
+            box-shadow: none
+            border: 3px solid $primary
+    .p-button
+        background-color: $primary
+        border: none
+        &:enabled:focus
+            box-shadow: none
+        &:hover
+            background: $primary
+            color: $grey
+            box-shadow: 0 0 5px $primary,0 0 25px $primary

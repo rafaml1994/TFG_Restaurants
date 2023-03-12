@@ -1,24 +1,23 @@
-<p-carousel [value]="products" styleClass="custom-carousel" [numVisible]="3" [numScroll]="1" [circular]="true" [autoplayInterval]="3000" [responsiveOptions]="responsiveOptions">
-    <ng-template pTemplate="header">
-        <h5>Circular, AutoPlay, 3 Items per Page and Scroll by 1</h5>
-    </ng-template>
-    <ng-template let-product pTemplate="item">
-        <div class="product-item">
-            <div class="product-item-content">
-                <div class="mb-3">
-                    <img src="https://primefaces.org/cdn/primeng/images/demo/product/product.image" [alt]="product.name" class="product-image" />
-                </div>
-                <div>
-                    <h4 class="mb-1">{{product.name}}</h4>
-                    <h6 class="mt-0 mb-3">${{product.price}}</h6>
-                    <span [class]="'product-badge status-'+product.inventoryStatus.toLowerCase()">{{product.inventoryStatus}}</span>
-                    <div class="car-buttons mt-5">
-                        <p-button type="button" styleClass="p-button p-button-rounded mr-2" icon="pi pi-search"></p-button>
-                        <p-button type="button" styleClass="p-button-success p-button-rounded mr-2" icon="pi pi-star-fill"></p-button>
-                        <p-button type="button" styleClass="p-button-help p-button-rounded" icon="pi pi-cog"></p-button>
-                    </div>
+<div class="card">
+    <p-carousel [value]="products" styleClass="custom-carousel" [numVisible]="3" [numScroll]="1" [circular]="true"
+        [autoplayInterval]="3000" [responsiveOptions]="responsiveOptions">
+        <ng-template let-image let-product pTemplate="item">
+            <div class="item-card">
+                <img src="{{product.image}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{product.name}}</h5>
+                    <p class="card-text">{{product.description}}</p>
+                    <a href="" class="btn btn-primary">Go somewhere<fa-icon [icon]="faCoffee"></fa-icon></a>
                 </div>
             </div>
-        </div>
-    </ng-template>
-</p-carousel>
+            <div class="item-card" style="opacity: 0;">
+                <img src="{{product.image}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{product.name}}</h5>
+                    <p class="card-text">{{product.description}}</p>
+                    <a href="" class="btn btn-primary">Go somewhere<fa-icon [icon]="faCoffee"></fa-icon></a>
+                </div>
+            </div>
+        </ng-template>
+    </p-carousel>
+</div>
