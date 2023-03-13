@@ -1,0 +1,78 @@
+@import '../../../styles'
+
+@property --rotate
+    syntax: "<angle>"
+    initial-value: 132deg
+    inherits: false
+
+$card-height: 65vh
+$card-width: calc($card-height/ 1)
+
+.login-container
+    height: 100vh
+    position: absolute
+    width: 100%
+    z-index: -2
+    background: #212534
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    padding-top: 2rem
+    padding-bottom: 2rem
+    box-sizing: border-box
+
+.card
+    background: #191c29
+    color: $white
+    width: $card-width
+    height: $card-height
+    padding: 3px
+    position: relative
+    border-radius: 6px
+    justify-content: center
+    align-items: center
+    text-align: center
+    display: flex
+    font-size: 1.5em
+    font-family: cursive
+    &::before
+        content: ""
+        width: 103%
+        height: 102%
+        border-radius: 8px
+        background-image: linear-gradient(var(--rotate), $primary,#ff4800)
+        position: absolute
+        z-index: -1
+        top: -1%
+        left: -2%
+        animation: spin 2.5s linear infinite
+    &::after
+        position: absolute
+        content: ""
+        top: calc($card-height/ 5)
+        left: 0
+        right: 0
+        z-index: -1
+        height: 100%
+        width: 100%
+        margin: 0 auto
+        transform: scale(.8)
+        filter: blur(calc($card-height / 5))
+        background-image: linear-gradient(var(--rotate), $primary,#ff4800)
+        opacity: 1
+        transition: opacity .5s
+        animation: spin 2.5s linear infinite
+
+@keyframes spin
+    0%
+        --rotate: 0deg
+    100%
+        --rotate: 360deg
+
+a
+    color: #212534
+    text-decoration: none
+    font-family: sans-serif
+    font-weight: bold
+    margin-top: 2rem

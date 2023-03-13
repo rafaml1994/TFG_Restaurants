@@ -18,8 +18,14 @@ import { ButtonModule } from 'primeng/button';
 import { CarouselModule } from 'primeng/carousel';
 import { RippleModule } from 'primeng/ripple';
 import { ToastModule } from 'primeng/toast';
-import {  InputTextModule} from 'primeng/inputtext'
+import {  InputTextModule} from 'primeng/inputtext';
+import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/login/login.component'
 
+import {getAuth, provideAuth} from '@angular/fire/auth';
+import { initializeApp, provideFirebaseApp} from '@angular/fire/app';
+import { ReactiveFormsModule } from '@angular/forms';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -29,7 +35,9 @@ import {  InputTextModule} from 'primeng/inputtext'
     HomeComponent,
     CardsComponent,
     DetallesComponent,
-    SearchComponent
+    SearchComponent,
+    RegisterComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,6 +50,9 @@ import {  InputTextModule} from 'primeng/inputtext'
     InputTextModule,
     HttpClientModule,
     FontAwesomeModule,
+    ReactiveFormsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth())
   ],
   providers: [],
   bootstrap: [AppComponent]
