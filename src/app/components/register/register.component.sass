@@ -1,0 +1,31 @@
+@import '../login/login.component'
+
+.input-pw
+    width: 80%
+    display: flex
+    flex-direction: column
+    gap: 1.5rem
+    label
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+        font-size: medium
+        color: $secondary
+    #float-input
+        width: 100%
+        border: none
+        height: 2.7rem
+        background-color: #161616
+        color: $white
+        text-align: center
+        &:enabled:focus
+            box-shadow: none
+            border: 2px solid $primary
+    #float-input-invalid
+        width: 100%
+        height: 2.7rem
+        background-color: #161616
+        color: $white
+        text-align: center
+        &:enabled:focus
+            box-shadow: none
+    .invalid-label
+        color: #e24c4c

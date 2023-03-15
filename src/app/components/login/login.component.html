@@ -1,21 +1,45 @@
 <div class="login-container">
-    <div class="card">
-        <form action="">
-            <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
-                <div>
-                  <label for="email">
-                    Email
-                  </label>
-                  <input id="email" type="email" formControlName="email">
-                </div>
-                <div>
-                  <label for="password">
-                    Contraseña
-                  </label>
-                  <input id="password" type="password" formControlName="password">
-                </div>
-                <button class="button" type="submit">Registrar</button>
-            </form>
-        </form>
-    </div>
+  <div class="card">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
+      <div class="inputs">
+        <span class="p-float-label" *ngIf="invalidEmail == 0">
+          <input id="float-input" type="email" pInputText formControlName="email" autocomplete="email">
+          <label for="float-input">Email</label>
+        </span>
+        <span class="p-float-label" *ngIf="invalidEmail >= 1">
+          <input id="float-input-invalid" type="text" pInputText class="ng-invalid ng-dirty" formControlName="email">
+          <label class="invalid-label" for="float-input-invalid">Email</label>
+        </span>
+        <small id="username2-help" class="p-error block" *ngIf="invalidEmail == 1">E-mail incorrecto</small>
+      </div>
+      <div class="inputs">
+        <span class="p-float-label" *ngIf="invalidPassword == 0">
+          <input id="float-input" type="password" pInputText formControlName="password" autocomplete="current-password">
+          <label for="float-input">Password</label>
+        </span>
+        <span class="p-float-label" *ngIf="invalidPassword >= 1">
+          <input id="float-input-invalid" type="password" pInputText class="ng-invalid ng-dirty"
+            formControlName="password">
+          <label class="invalid-label" for="float-input-invalid">Password</label>
+        </span>
+        <small id="username2-help" class="p-error block" *ngIf="invalidPassword == 1">Contraseña incorrecta</small>
+      </div>
+      <div class="btnGroup-login">
+        <button type="submit">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Log in
+        </button>
+        <button (click)="logWhitGoogle()">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <i class="pi pi-google"></i> Loguear con google
+        </button>
+      </div>
+    </form>
+  </div>
 </div>
