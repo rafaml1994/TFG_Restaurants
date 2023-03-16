@@ -19,8 +19,6 @@ export class SearchComponent {
       this.productService.getProductName()
       .then(restaurants => {
         this.restaurants = restaurants
-        console.log(restaurants);
-        
       })
   }
 
@@ -30,16 +28,15 @@ export class SearchComponent {
     let query = event.query;
     for (let i = 0; i < this.restaurants.length; i++) {
       let restaurant = this.restaurants[i];
-      console.log(restaurant);
       if (restaurant.name.toLowerCase().indexOf(query.toLowerCase()) == 0) {
         filtered.push(restaurant.name);
       }
     }
-
     this.results = filtered;
   }
   
   searchRestaurant(){
-
+      console.log(this.text);
+      this.text = '';
   }
 }
