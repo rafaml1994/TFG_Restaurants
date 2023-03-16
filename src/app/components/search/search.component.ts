@@ -11,7 +11,7 @@ export class SearchComponent {
 
   text!: any;
 
-  results!: any;
+  restaurantesFiltrados!: any;
 
   constructor( 
     private productService : ProductsService
@@ -23,7 +23,6 @@ export class SearchComponent {
   }
 
   search(event:any){
-
     let filtered: any[] = [];
     let query = event.query;
     for (let i = 0; i < this.restaurants.length; i++) {
@@ -32,7 +31,7 @@ export class SearchComponent {
         filtered.push(restaurant.name);
       }
     }
-    this.results = filtered;
+    this.restaurantesFiltrados = filtered;
   }
   
   searchRestaurant(){

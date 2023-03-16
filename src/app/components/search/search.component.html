@@ -2,7 +2,7 @@
     <div class="input-container">
         <h3>Busca tu restaurante favorito</h3>
         <div class="p-inputgroup mt-3">
-            <p-autoComplete [(ngModel)]="text" [suggestions]="results" (completeMethod)="search($event)"></p-autoComplete>
+            <p-autoComplete [(ngModel)]="text" [suggestions]="restaurantesFiltrados" (completeMethod)="search($event)"></p-autoComplete>
             <button type="button" pButton pRipple (click)="searchRestaurant()"><i class="pi pi-search"></i></button>
         </div>
     </div>
