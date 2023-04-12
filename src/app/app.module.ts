@@ -9,7 +9,6 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { HomeComponent } from './components/home/home.component';
 import { CardsComponent } from './components/home/cards/cards.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DetallesComponent } from './components/detalles/detalles.component';
 import { SearchComponent } from './components/search/search.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component'
@@ -31,6 +30,7 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { ReactiveFormsModule } from '@angular/forms';
 import { environment } from '../environments/environment';
+import { RestaurantComponentComponent } from './components/restaurant-component/restaurant-component.component';
 
 
 @NgModule({
@@ -39,10 +39,10 @@ import { environment } from '../environments/environment';
     NavBarComponent,
     HomeComponent,
     CardsComponent,
-    DetallesComponent,
     SearchComponent,
     RegisterComponent,
     LoginComponent,
+    RestaurantComponentComponent,
   ],
   imports: [
     BrowserModule,

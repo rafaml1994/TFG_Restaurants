@@ -1,0 +1,33 @@
+<div class="restaurant-container">
+    <div class="container pt-7">
+        <div class="titulo-container" id="titulo-container">
+            <h1>{{restaurant.name}}</h1>
+            <p>{{restaurant.direccion}}</p>
+        </div>
+        <div class="body-restaurant mt-7">
+            <div class="menu-title p-5">
+                <h2>Menu de hoy :</h2>
+            </div>
+            <div class="menu-container pb-7">
+                <div class="card-menu p-5">
+                    <h3>Primeros</h3>
+                    <ul *ngFor="let primero of restaurant.primeros">
+                        <li>{{primero}}</li>
+                    </ul>
+                    <h3>Segundos</h3>
+                    <ul *ngFor="let primero of restaurant.segundos">
+                        <li>{{primero}}</li>
+                    </ul>
+                    <h3>Postres</h3>
+                    <ul *ngFor="let primero of restaurant.postres">
+                        <li>{{primero}}</li>
+                    </ul>
+                </div>
+                <div class="img-container" id="img-container">
+                    <img src="" alt="carta" id="img-menu">
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>

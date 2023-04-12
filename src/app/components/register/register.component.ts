@@ -31,8 +31,8 @@ export class RegisterComponent {
       this.authService.register(data)
         .then(response => {
           Swal.fire(
-            'Good job!',
-            'You clicked the button!',
+            '¡Se ha registrado con éxito!',
+            '',
             'success'
           )
           this.router.navigate(['/login']);

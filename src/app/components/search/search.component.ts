@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { ProductsService } from '../../services/products.service'
+import { ProductsService } from '../../services/products.service';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -8,13 +10,14 @@ import { ProductsService } from '../../services/products.service'
 export class SearchComponent {
 
   restaurants!:any[]
-
+  filteredId!:string
   text!: any;
 
   restaurantesFiltrados!: any;
 
   constructor( 
-    private productService : ProductsService
+    private productService : ProductsService,
+    private Router : Router
     ) {
       this.productService.getProductName()
       .then(restaurants => {
@@ -29,13 +32,18 @@ export class SearchComponent {
       let restaurant = this.restaurants[i];
       if (restaurant.name.toLowerCase().indexOf(query.toLowerCase()) == 0) {
         filtered.push(restaurant.name);
+        
       }
     }
     this.restaurantesFiltrados = filtered;
   }
   
   searchRestaurant(){
-      console.log(this.text);
+      this.restaurants.forEach(restaurant => {
+        if (this.text == restaurant.name) {
+          this.Router.navigate([`/restaurant-component/${restaurant.id}`]);
+        }
+      });
       this.text = '';
   }
 }

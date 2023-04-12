@@ -35,7 +35,7 @@ export class CardsComponent {
 	}
 
     ngOnInit() {
-		this.productService.getProductsSmall().then(products => {
+		this.productService.getProducts().then(products => {
 			this.products = products;
 		});
     }
