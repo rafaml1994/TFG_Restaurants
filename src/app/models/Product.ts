@@ -9,5 +9,4 @@ export interface Product {
     segundos?:string[];
     postres?:string[];
     image?:string;
-
 }

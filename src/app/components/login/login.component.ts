@@ -29,6 +29,9 @@ export class LoginComponent {
     this.authService.loginWhitGoogle()
       .then(res => {
         this.router.navigate(['/inicio'])
+        let datosString = JSON.stringify(res.user)
+        sessionStorage.setItem("session-data", datosString);
+        sessionStorage.setItem("session", "true");
       })
       .catch(err => {
         console.log(err);
@@ -40,6 +43,8 @@ export class LoginComponent {
       .then(response => {
         console.log(response);
         this.router.navigate(['/inicio']);
+        sessionStorage.setItem("email", data.email);
+        console.log(data);
       })
       .catch(err => {
         console.log(err.code);
@@ -59,7 +64,11 @@ export class LoginComponent {
             this.router.navigate(['/login']);
             this.loginForm.reset();
             break;
-            
+          case 'auth/invalid-email':
+            this.invalidEmail = 1;
+            this.router.navigate(['/login']);
+            this.loginForm.reset();
+            break;
           default:
             break;
         }

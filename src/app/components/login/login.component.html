@@ -7,7 +7,7 @@
           <label for="float-input">Email</label>
         </span>
         <span class="p-float-label" *ngIf="invalidEmail >= 1">
-          <input id="float-input-invalid" type="text" pInputText class="ng-invalid ng-dirty" formControlName="email">
+          <input id="float-input-invalid" type="email" pInputText class="ng-invalid ng-dirty" formControlName="email" autocomplete="email">
           <label class="invalid-label" for="float-input-invalid">Email</label>
         </span>
         <small id="username2-help" class="p-error block" *ngIf="invalidEmail == 1">E-mail incorrecto</small>
@@ -32,14 +32,14 @@
           <span></span>
           Log in
         </button>
-        <button (click)="logWhitGoogle()">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <i class="pi pi-google"></i> Loguear con Google
-        </button>
       </div>
     </form>
+    <button (click)="logWhitGoogle()" class="btn-google">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <i class="pi pi-google"></i> Loguear con Google
+    </button>
   </div>
 </div>
