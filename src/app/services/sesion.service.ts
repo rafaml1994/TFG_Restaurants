@@ -1,20 +1,21 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable} from 'rxjs'
+import { BehaviorSubject} from 'rxjs'
+import { Usuario } from '../models/Usuario';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SesionService {
 
-  sessionData!: BehaviorSubject<String>;
+  sessionData: BehaviorSubject<String> = new BehaviorSubject<String>("false");
 
-  constructor(private http: HttpClient) { }
+  constructor() { }
 
-  DatosSesion(data:string){
-    this.sessionData.next(data);
+  DatosSesion(logedIn: String){
+    this.sessionData.next(logedIn);
   }
+
   ObtenerDatosSesion(){
-    return this.sessionData.asObservable();
+    return this.sessionData?.asObservable();
   }
 }

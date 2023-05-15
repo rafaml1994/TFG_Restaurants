@@ -4,7 +4,7 @@
         <li><a routerLink="/inicio">Inicio</a></li>
         <li><a routerLink="/buscar">Buscar restaurante</a></li>
     </ul>
-    <div class="registro-container" *ngIf="!isLoggedIn">
+    <div class="registro-container" *ngIf="isLoggedIn == 'false'">
         <a routerLink="/register">Sign in</a>
         <a routerLink="/login">
             <span></span>
@@ -14,13 +14,13 @@
             Sign up
         </a>
     </div>
-    <!-- <div class="log-out" *ngIf="">
-        <button >
+    <div class="log-out" *ngIf="isLoggedIn == 'true'">
+        <button (click)="cerrarSesion()">
             <span></span>
             <span></span>
             <span></span>
             <span></span>
             Cerrar sesión
         </button>
-    </div> -->
+    </div> 
 </nav>
