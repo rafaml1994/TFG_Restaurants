@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ProductsService } from 'src/app/services/products.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Product } from 'src/app/models/Product';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-restaurant-component',
   templateUrl: './restaurant-component.component.html',
@@ -9,6 +10,7 @@ import { Product } from 'src/app/models/Product';
 })
 export class RestaurantComponentComponent {
   restaurant!: Product;
+  faArrowLeft=faArrowLeft;
   constructor(
     private ProductsService: ProductsService,
     private Router : ActivatedRoute,
@@ -25,8 +27,7 @@ export class RestaurantComponentComponent {
       let imgMenu:any = document.getElementById('img-menu');
       let imgContainer:any = document.getElementById('img-container');
       if(this.restaurant.image !== '' ){
-        imgMenu.src = `${this.restaurant.image}`;
-        
+        imgMenu.src = `${this.restaurant.image}`;   
       }else{
         imgContainer.style.display = 'none';
       }

@@ -22,8 +22,7 @@ import { ToastModule } from 'primeng/toast';
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password'
 import { AutoCompleteModule } from 'primeng/autocomplete';
-
-/* Modal Sweet */
+import { AccordionModule } from 'primeng/accordion' 
 
 
 import { getAuth, provideAuth } from '@angular/fire/auth';
@@ -32,7 +31,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { environment } from '../environments/environment';
 import { RestaurantComponentComponent } from './components/restaurant-component/restaurant-component.component';
 
-
+import { ParticlesModule } from 'angular-particle';
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,6 +58,7 @@ import { RestaurantComponentComponent } from './components/restaurant-component/
     AutoCompleteModule,
     PasswordModule,
     FormsModule,
+    AccordionModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth())
   ],

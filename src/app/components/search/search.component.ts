@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ProductsService } from '../../services/products.service';
 import { Router } from '@angular/router';
-
+import { ParticlesComponent } from 'angular-particle';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',

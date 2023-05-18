@@ -2,14 +2,9 @@
 	"data": [
 		{
 			"id": "0",
-			"code": "f230fh0g3",
 			"name": "RESTAURANTE PACOJAMON",
 			"description": "Un restaurante recomendado para aquellas personas que les gueste el jamón",
 			"image": "https://cdn.pixabay.com/photo/2014/09/17/20/26/restaurant-449952_640.jpg",
-			"price": 10,
-			"category": "Accessories",
-			"quantity": 24,
-			"inventoryStatus": "INSTOCK",
 			"rating": 5
 		},
 		{
@@ -18,77 +13,39 @@
 			"name": "SHUSI MADRID",
 			"description": "En este restaurante encontrarás una gran variedad de shusi con una calidad/precio inigualables",
 			"image": "https://picsum.photos/id/1011/900/500",
-			"price": 15,
-			"category": "Accessories",
-			"quantity": 61,
-			"inventoryStatus": "INSTOCK",
 			"rating": 4
 		},
 		{
 			"id": "2",
-			"code": "zz21cz3c1",
 			"name": "BLUE BANANA",
 			"direccion": "C/ margaritas,10",
 			"description": "Restaurante dedicado a la comida mexicana, no apto para personas sensibles al picante!",
 			"image": "https://cdn.pixabay.com/photo/2014/09/17/20/26/restaurant-449952_640.jpg",
-			"price": 12,
-			"category": "Fitness",
-			"quantity": 2,
-			"inventoryStatus": "LOWSTOCK",
 			"rating": 3
 		},
 		{
 			"id": "3",
-			"code": "244wgerg2",
-			"name": "RESTAURANTE RUBAVIEJA",
+			"name": "BLUE BANANA",
 			"direccion": "C/ margaritas,10",
-			"primeros":["Plato 1","Plato 2", "Plato 3"],
-			"segundos":["Plato 1","Plato 2", "Plato 3"],
-			"postres":["Postre 1","Postre 2", "Postre 3"],
-			"description": "Restaurante dedicado a la comida tradicional española, con gran variedad y estilos",
+			"description": "Restaurante dedicado a la comida mexicana, no apto para personas sensibles al picante!",
 			"image": "https://cdn.pixabay.com/photo/2014/09/17/20/26/restaurant-449952_640.jpg",
-			"price": 20,
-			"category": "Clothing",
-			"quantity": 25,
-			"inventoryStatus": "INSTOCK",
-			"rating": 5
+			"rating": 3
 		},
 		{
 			"id": "4",
-			"code": "h456wer53",
-			"name": "Bracelet",
-			"description": "Product Description",
-			"image": "https://picsum.photos/id/1011/900/500",
-			"price": 15,
-			"category": "Accessories",
-			"quantity": 73,
-			"inventoryStatus": "INSTOCK",
-			"rating": 4
+			"name": "BLUE BANANA",
+			"direccion": "C/ margaritas,10",
+			"description": "Restaurante dedicado a la comida mexicana, no apto para personas sensibles al picante!",
+			"image": "https://cdn.pixabay.com/photo/2014/09/17/20/26/restaurant-449952_640.jpg",
+			"rating": 3
 		},
 		{
 			"id": "5",
-			"code": "av2231fwg",
-			"name": "Brown Purse",
-			"description": "Product Description",
-			"image": "https://picsum.photos/id/1011/900/500",
-			"price": 120,
-			"category": "Accessories",
-			"quantity": 0,
-			"inventoryStatus": "OUTOFSTOCK",
-			"rating": 4
-		},
-		{
-			"id": "6",
-			"code": "bib36pfvm",
-			"name": "Chakra Bracelet",
-			"description": "Product Description",
-			"image": "",
-			"price": 32,
-			"category": "Accessories",
-			"quantity": 5,
-			"inventoryStatus": "LOWSTOCK",
+			"name": "BLUE BANANA",
+			"direccion": "C/ margaritas,10",
+			"description": "Restaurante dedicado a la comida mexicana, no apto para personas sensibles al picante!",
+			"image": "https://cdn.pixabay.com/photo/2014/09/17/20/26/restaurant-449952_640.jpg",
 			"rating": 3
 		}
-		
 	]
 }
