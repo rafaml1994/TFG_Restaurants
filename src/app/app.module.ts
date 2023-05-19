@@ -31,6 +31,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { environment } from '../environments/environment';
 import { RestaurantComponentComponent } from './components/restaurant-component/restaurant-component.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

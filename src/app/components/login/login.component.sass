@@ -36,13 +36,20 @@ $card-width: calc($card-height/ 1)
         width: 80%
         margin: 0 auto
         margin-bottom: 1rem
-        background-color: #e41111
+        background-color: #bb2727da
         border: none
         border-radius: 5px
         padding: 8px 20px
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
         font-size: large
+        font-weight: 400
         color: white
+        display: flex
+        align-items: center
+        gap: 1rem
+        &:hover
+            transform: scale(1.1)
+            transition: .3s
     form
         justify-content: space-around
         align-items: center
@@ -60,9 +67,9 @@ $card-width: calc($card-height/ 1)
             padding: 8px 20px
             color: $primary
             font-size: 16px
-            text-transform: uppercase
+            text-transform: capitalize
             overflow: hidden
-            transition: .5s
+            transition: .3s
             letter-spacing: 3px
             background-color: transparent
             border: none
@@ -105,6 +112,8 @@ $card-width: calc($card-height/ 1)
                 color: $grey
                 border-radius: 5px
                 box-shadow: 0 0 5px $primary,0 0 25px $primary
+                font-weight: bold
+                transform: scale(1.1)
         .btnGroup-login
             display: flex
             flex-direction: column

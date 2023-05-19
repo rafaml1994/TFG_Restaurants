@@ -13,7 +13,7 @@ export class RegisterComponent {
   loginForm;
   invalidEmail: Number = 0;
   invalidPassword: Number = 0;
-
+  value!:String;
 
   constructor(
     private authService: AuthService,

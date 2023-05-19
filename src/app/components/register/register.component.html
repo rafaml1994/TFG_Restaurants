@@ -16,8 +16,8 @@
             </div>
             <div class="input-pw">
                 <span class="p-float-label" *ngIf="invalidPassword == 0">
-                    <input id="float-input" type="password" pInputText formControlName="password"
-                        autocomplete="current-password" pPassword>
+                    <p-password [(ngModel)]="value" id="float-input" type="password" formControlName="password"
+                        autocomplete="current-password"></p-password>
                     <label for="float-input">Password</label>
                 </span>
                 <span class="p-float-label" *ngIf="invalidPassword >= 1">

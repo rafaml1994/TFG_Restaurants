@@ -7,7 +7,10 @@
                 <div class="card-body">
                     <h5 class="card-title">{{product.name}}</h5>
                     <p class="card-text">{{product.description}}</p>
-                    <a [routerLink]="['/restaurant-component', product.id]" class="btn btn-primary">Ir al restaurante<fa-icon [icon]="faCoffee"></fa-icon></a>
+                    <p class="card-text" *ngIf="product.DistanceFromUser != 'A pocos metros'">A <span>{{product.DistanceFromUser}} </span>de ti</p>
+                    <p class="card-text" *ngIf="product.DistanceFromUser == 'A pocos metros'">Restaurante <span>{{product.DistanceFromUser}}</span></p>
+                    <a [routerLink]="['/restaurant-component', product.id]" class="btn btn-primary">Ir al
+                        restaurante<fa-icon [icon]="faCoffee"></fa-icon></a>
                 </div>
             </div>
             <div class="item-card" style="opacity: 0;">
@@ -15,9 +18,16 @@
                 <div class="card-body">
                     <h5 class="card-title">{{product.name}}</h5>
                     <p class="card-text">{{product.description}}</p>
-                    <a href="" class="btn btn-primary">Ir al restaurante<fa-icon [icon]="faCoffee"></fa-icon></a>
+                    
+                    <a href="" class="btn btn-primary">Ir al restaurante
+                        <span>
+                            <fa-icon [icon]="faCoffee"></fa-icon>
+                        </span>
+                    </a>
                 </div>
+                
             </div>
         </ng-template>
     </p-carousel>
 </div>
+

@@ -42,10 +42,22 @@ $grey: #242424
     background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(36,36,36,1) 100%)
 .cards-container
     width: 100%
-    /* margin: 0 auto */
+    margin: 0 auto 
     padding-top: 10rem
 @keyframes flicker
     0%, 18%, 22%, 25%, 53%, 57%, 100%
         text-shadow: 0 0 4px #fff,0 0 11px #fff,0 0 19px #fff,0 0 40px $primary,0 0 80px $primary,0 0 90px $primary,0 0 100px $primary,0 0 150px $primary
     20%, 24%, 55%
         text-shadow: none
+@media (max-width:1000px)
+    .neon-text
+        margin-left: 80px
+@media (max-width:700px)
+    .neon-text
+        h1
+            font: 4rem/3rem Roboto, sans-serif
+@media (max-width:600px)
+    .neon-text
+        margin-left: 0 auto
+        h1
+            font: 3rem/2rem Roboto, sans-serif

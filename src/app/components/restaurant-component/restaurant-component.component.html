@@ -1,12 +1,12 @@
 <div class="restaurant-container">
     <div class="container pt-7">
         <div class="titulo-container" id="titulo-container">
-            <h1>{{restaurant.name}}</h1>
-            <p>{{restaurant.direccion}}</p>
+            <h1>{{restaurant?.name}}</h1>
+            <p>{{restaurant?.direccion}}</p>
         </div>
         <div class="body-restaurant mt-7">
             <div class="arrow-left-container">
-                <a [routerLink]="['/buscar']"><fa-icon [icon]="faArrowLeft" ></fa-icon>Atrás</a>
+                <a (click)="back()"><fa-icon [icon]="faArrowLeft" ></fa-icon>Atrás</a>
             </div>
             <div class=" menu-title p-5">
                 <h2>Menu de hoy :</h2>
@@ -15,17 +15,17 @@
                 <div class="card-container">
                     <p-accordion [activeIndex]="0">
                         <p-accordionTab header="Primeros">
-                            <ul *ngFor="let primero of restaurant.primeros">
+                            <ul *ngFor="let primero of restaurant?.primeros">
                                 <li>{{primero}}</li>
                             </ul>
                         </p-accordionTab>
                         <p-accordionTab header="Segundos">
-                            <ul *ngFor="let primero of restaurant.segundos">
+                            <ul *ngFor="let primero of restaurant?.segundos">
                                 <li>{{primero}}</li>
                             </ul>
                         </p-accordionTab>
                         <p-accordionTab header="Postres">
-                            <ul *ngFor="let primero of restaurant.postres">
+                            <ul *ngFor="let primero of restaurant?.postres">
                                 <li>{{primero}}</li>
                             </ul>
                         </p-accordionTab>

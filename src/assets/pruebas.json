@@ -5,39 +5,45 @@
 			"name": "RESTAURANTE PACOJAMON",
 			"description": "Un restaurante recomendado para aquellas personas que les gueste el jamón",
 			"image": "https://cdn.pixabay.com/photo/2014/09/17/20/26/restaurant-449952_640.jpg",
-			"rating": 5
+			"rating": 5,
+			"location": [40.278800421969436, -3.7025821529268828],
+			"primeros": ["primer plato","primer plato","primer plato"]
 		},
 		{
 			"id": "1",
-			"code": "nvklal433",
 			"name": "SHUSI MADRID",
 			"description": "En este restaurante encontrarás una gran variedad de shusi con una calidad/precio inigualables",
 			"image": "https://picsum.photos/id/1011/900/500",
-			"rating": 4
+			"rating": 4,
+			"location": [40.278800421969436, -3.7025821529268828]
 		},
 		{
 			"id": "2",
-			"name": "BLUE BANANA",
+			"name": "Para Caldos",
 			"direccion": "C/ margaritas,10",
 			"description": "Restaurante dedicado a la comida mexicana, no apto para personas sensibles al picante!",
 			"image": "https://cdn.pixabay.com/photo/2014/09/17/20/26/restaurant-449952_640.jpg",
-			"rating": 3
+			"rating": 3,
+			"location": [40.24033584615214, -3.7033366216978187]
+
 		},
 		{
 			"id": "3",
-			"name": "BLUE BANANA",
+			"name": "Restaurante Rubavieja",
 			"direccion": "C/ margaritas,10",
 			"description": "Restaurante dedicado a la comida mexicana, no apto para personas sensibles al picante!",
 			"image": "https://cdn.pixabay.com/photo/2014/09/17/20/26/restaurant-449952_640.jpg",
-			"rating": 3
+			"rating": 3,
+			"location": [40.215111102687814, -3.5755424923745287]
 		},
 		{
 			"id": "4",
-			"name": "BLUE BANANA",
-			"direccion": "C/ margaritas,10",
+			"name": "La Cocina de María",
+			"direccion": "C. Camelias, 5, 28903 Getafe, Madrid",
 			"description": "Restaurante dedicado a la comida mexicana, no apto para personas sensibles al picante!",
 			"image": "https://cdn.pixabay.com/photo/2014/09/17/20/26/restaurant-449952_640.jpg",
-			"rating": 3
+			"rating": 3,
+			"location": [40.31760101679556, -3.723667350248057]
 		},
 		{
 			"id": "5",
@@ -45,7 +51,8 @@
 			"direccion": "C/ margaritas,10",
 			"description": "Restaurante dedicado a la comida mexicana, no apto para personas sensibles al picante!",
 			"image": "https://cdn.pixabay.com/photo/2014/09/17/20/26/restaurant-449952_640.jpg",
-			"rating": 3
+			"rating": 3,
+			"location": [40.278800421969436, -3.7025821529268828]
 		}
 	]
 }

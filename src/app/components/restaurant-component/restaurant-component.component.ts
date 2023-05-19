@@ -9,7 +9,7 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./restaurant-component.component.sass']
 })
 export class RestaurantComponentComponent {
-  restaurant!: Product;
+  restaurant?: Product;
   faArrowLeft=faArrowLeft;
   constructor(
     private ProductsService: ProductsService,
@@ -21,17 +21,20 @@ export class RestaurantComponentComponent {
       console.log(element[0]);
       
       let tituloContainer:any = document.getElementById('titulo-container');
-      tituloContainer.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)),url(${this.restaurant.image})`;
+      tituloContainer.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)),url(${this.restaurant?.image})`;
       tituloContainer.style.backgroundPosition = 'center'
 
       let imgMenu:any = document.getElementById('img-menu');
       let imgContainer:any = document.getElementById('img-container');
-      if(this.restaurant.image !== '' ){
-        imgMenu.src = `${this.restaurant.image}`;   
+      if(this.restaurant?.image !== '' ){
+        imgMenu.src = `${this.restaurant?.image}`;   
       }else{
         imgContainer.style.display = 'none';
       }
       
     })
+  }
+  back(){
+    history.back();
   }
 }
