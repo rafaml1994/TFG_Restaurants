@@ -55,12 +55,11 @@ export class CardsComponent {
                     this.localizacion = this.resultadoLocalizacion+" Km";
                     if (this.resultadoLocalizacion > 2){
                         this.products[restauranteInfo.id].DistanceFromUser = this.localizacion;
-                    }else{
+                    }else if(this.resultadoLocalizacion < 2){
                         this.products[restauranteInfo.id].DistanceFromUser = "A pocos metros";
-                    }
-                    
-                    console.log(this.products);
-                                      
+                    }else{
+                        this.products[restauranteInfo.id].DistanceFromUser = "";
+                    }                                 
                 }
             });
         });
@@ -70,8 +69,6 @@ export class CardsComponent {
     ngOnChanges(changes: SimpleChanges): void {
         if (changes['coords'].currentValue != changes['coords'].previousValue) {
             this.coords1 = changes['coords'].currentValue;
-            /* this.resultadoLocalizacion = this.calcularDistanciaEntreDosCoordenadas(changes['coords'].currentValue[0],changes['coords'].currentValue[1],this.coords2[0],this.coords2[1]);
-            this.localizacion = Math.round(this.resultadoLocalizacion)+" Km"; */
         }
     }
 
