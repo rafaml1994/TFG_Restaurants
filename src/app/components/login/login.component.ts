@@ -47,6 +47,8 @@ export class LoginComponent {
         console.log(response);
         this.router.navigate(['/inicio']);
         sessionStorage.setItem("email", data.email);
+        sessionStorage.setItem("session", "true");
+        this.sesionService.DatosSesion(sessionStorage.getItem('session')!); 
         console.log(data);
       })
       .catch(err => {
