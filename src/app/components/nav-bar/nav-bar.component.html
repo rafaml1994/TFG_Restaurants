@@ -1,26 +1,44 @@
 <nav class="navBar">
-    <a routerLink="/inicio"><img src="../../../assets/images/logo.png" alt=""></a>
-    <ul>
-        <li><a routerLink="/inicio">Inicio</a></li>
-        <li><a routerLink="/buscar">Buscar restaurante</a></li>
-    </ul>
-    <div class="registro-container" *ngIf="isLoggedIn == 'false'">
-        <a routerLink="/login">Sign in</a>
-        <a routerLink="/register">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            Sign up
-        </a>
+    <div class="desktop-navbar">
+        <a routerLink="/inicio"><img src="../../../assets/images/logo.png" alt=""></a>
+        <ul>
+            <li><a routerLink="/inicio">Inicio</a></li>
+            <li><a routerLink="/buscar">Buscar restaurante</a></li>
+        </ul>
+        <div class="registro-container" *ngIf="isLoggedIn == 'false'">
+            <a routerLink="/login">Sign in</a>
+            <a routerLink="/register">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Sign up
+            </a>
+        </div>
+        <div class="log-out" *ngIf="isLoggedIn == 'true'">
+            <button (click)="cerrarSesion()">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Cerrar sesión
+            </button>
+        </div>
     </div>
-    <div class="log-out" *ngIf="isLoggedIn == 'true'">
-        <button (click)="cerrarSesion()">
+    <div class="mobile-navbar">
+        <div id="menuToggle">
+            <input type="checkbox" />
             <span></span>
             <span></span>
             <span></span>
-            <span></span>
-            Cerrar sesión
-        </button>
-    </div> 
+            <ul id="menu">
+                <li><a href="#">Home</a></li>
+                <li><a routerLink="/buscar">Buscar restaurante</a></li>
+                <li><a routerLink="/login">Sign In</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <a routerLink="/inicio"><img src="../../../assets/images/logo.png" alt=""></a>
+
+    </div>
 </nav>

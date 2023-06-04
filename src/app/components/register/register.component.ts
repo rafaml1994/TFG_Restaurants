@@ -58,8 +58,6 @@ export class RegisterComponent {
               this.router.navigate(['/register']);
               this.loginForm.reset()
               break;
-
-
             default:
               break;
           }

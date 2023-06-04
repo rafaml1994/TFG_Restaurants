@@ -2,6 +2,7 @@ import { Component, Input, SimpleChanges } from '@angular/core';
 import { ProductsService } from '../../../services/products.service';
 import { Product } from '../../../models/Product';
 import { faCoffee, faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
+import { BehaviorSubject } from 'rxjs';
 @Component({
     selector: 'app-cards',
     templateUrl: './cards.component.html',
@@ -13,14 +14,20 @@ export class CardsComponent {
     right = faChevronRight;
     products: Product[] = [];
     responsiveOptions;
+    actualizarComponent:number = 0;
 
     @Input() coords?: number[];
+    @Input() restaurantes?: Product[];
+
     localizacion?: String;
     coords1: number[] = [];
     coords2: number[] = [];
-    resultadoLocalizacion:number = 0;
-    
-    constructor(private productService: ProductsService) {
+    resultadoLocalizacion: number = 0;
+
+    actualizarLocation: BehaviorSubject<number[]> = new BehaviorSubject<number[]>([]);
+
+    constructor(private productService: ProductsService,
+        ) {
         this.responsiveOptions = [
             {
                 breakpoint: '2000px',
@@ -43,36 +50,43 @@ export class CardsComponent {
                 numScroll: 1
             }
         ];
-
+        this.obtenerLocationActualizada().subscribe((data) => {
+            this.coords1 = data
+        })
     }
 
     ngOnInit() {
         this.productService.getProducts().then(products => {
             this.products = products;
             this.products.forEach(restauranteInfo => {
-                if (restauranteInfo.location != undefined){
-                    this.resultadoLocalizacion = Math.round(this.calcularDistanciaEntreDosCoordenadas(this.coords1[0], this.coords1[1],restauranteInfo.location[0],restauranteInfo.location[1]));
-                    this.localizacion = this.resultadoLocalizacion+" Km";
-                    if (this.resultadoLocalizacion > 2){
+                if (restauranteInfo.location != undefined) {
+                    this.resultadoLocalizacion = Math.round(this.calcularDistanciaEntreDosCoordenadas(this.coords1[0], this.coords1[1], restauranteInfo.location[0], restauranteInfo.location[1]));
+                    this.localizacion = this.resultadoLocalizacion + " Km";
+                    if (this.resultadoLocalizacion > 2) {
                         this.products[restauranteInfo.id].DistanceFromUser = this.localizacion;
-                    }else if(this.resultadoLocalizacion < 2){
+                    } else if (this.resultadoLocalizacion < 2) {
                         this.products[restauranteInfo.id].DistanceFromUser = "A pocos metros";
-                    }else{
+                    } else {
                         this.products[restauranteInfo.id].DistanceFromUser = "";
-                    }                                 
+                    }
                 }
             });
         });
-        
+      
+       
+       
     }
 
     ngOnChanges(changes: SimpleChanges): void {
         if (changes['coords'].currentValue != changes['coords'].previousValue) {
-            this.coords1 = changes['coords'].currentValue;
+            this.actualizarLocation.next(changes['coords'].currentValue);
+            this.ngOnInit();
         }
     }
 
-
+    obtenerLocationActualizada() {
+        return this.actualizarLocation.asObservable();
+    }
     calcularDistanciaEntreDosCoordenadas(lat1: number, lon1: number, lat2: number, lon2: number) {
         lat1 = this.gradosARadianes(lat1);
         lon1 = this.gradosARadianes(lon1);

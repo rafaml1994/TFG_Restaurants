@@ -6,7 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class LocationService {
 
-  userLocation?: [number,number];
+  //userLocation?: [number,number];
 
   location: BehaviorSubject<number[]> = new BehaviorSubject<number[]>([]);
   
@@ -17,15 +17,20 @@ export class LocationService {
   }
 
   public async getUserLocation(): Promise<[number,number]>{
+    const options = {
+      enableHighAccuracy: true,
+      timeout: Infinity,
+      maximumAge: 0,
+    };
     return new Promise((resolve,reject) => {
       navigator.geolocation.getCurrentPosition(
         ({coords})=>{
           resolve([coords.latitude,coords.longitude]);
         },
         (err)=>{
+          alert(err.message);
           reject();
-        }
-      )
+        },options)
     })
   }
   obtenerLocation(){
