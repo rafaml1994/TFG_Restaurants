@@ -5,6 +5,7 @@ export interface Product {
     direccion?:number[];
     description?:string;
     price?:number;
+    cartaImg?:string;
     primeros?:string[];
     segundos?:string[];
     postres?:string[];

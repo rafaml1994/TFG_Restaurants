@@ -26,8 +26,8 @@ export class RestaurantComponentComponent {
 
       let imgMenu:any = document.getElementById('img-menu');
       let imgContainer:any = document.getElementById('img-container');
-      if(this.restaurant?.image !== '' ){
-        imgMenu.src = `${this.restaurant?.image}`;   
+      if(this.restaurant?.cartaImg !== '' ){
+        imgMenu.src = `${this.restaurant?.cartaImg}`;   
       }else{
         imgContainer.style.display = 'none';
       }

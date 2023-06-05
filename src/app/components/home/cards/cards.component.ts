@@ -72,9 +72,6 @@ export class CardsComponent {
                 }
             });
         });
-      
-       
-       
     }
 
     ngOnChanges(changes: SimpleChanges): void {

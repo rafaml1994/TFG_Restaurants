@@ -6,9 +6,9 @@
         </div>
         <div class="body-restaurant mt-7">
             <div class="arrow-left-container">
-                <a (click)="back()"><fa-icon [icon]="faArrowLeft" ></fa-icon>Atrás</a>
+                <a (click)="back()"><fa-icon [icon]="faArrowLeft"></fa-icon>Atrás</a>
             </div>
-            <div class=" menu-title p-5">
+            <div class="menu-title p-5">
                 <h2>Menu de hoy :</h2>
             </div>
             <div class="menu-container pb-7">
@@ -20,21 +20,35 @@
                             </ul>
                         </p-accordionTab>
                         <p-accordionTab header="Segundos">
-                            <ul *ngFor="let primero of restaurant?.segundos">
-                                <li>{{primero}}</li>
+                            <ul *ngFor="let segundo of restaurant?.segundos">
+                                <li>{{segundo}}</li>
                             </ul>
                         </p-accordionTab>
                         <p-accordionTab header="Postres">
-                            <ul *ngFor="let primero of restaurant?.postres">
-                                <li>{{primero}}</li>
+                            <ul *ngFor="let postre of restaurant?.postres">
+                                <li>{{postre}}</li>
                             </ul>
                         </p-accordionTab>
                     </p-accordion>
                 </div>
                 <div class="img-container" id="img-container">
-                    <img src="" alt="carta" id="img-menu">
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <img src="" alt="carta" id="img-menu">
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                <div class="modal-body">
+                                    <img src="{{restaurant?.cartaImg}}" alt="carta" id="img-menu">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
             </div>
         </div>
     </div>
